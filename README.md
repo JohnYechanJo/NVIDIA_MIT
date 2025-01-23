@@ -1,2 +1,2 @@
-When Push: "Name"+"Content"
+When Push: "Name"+"Content" \n
 Example: John + Nerf Code Push
