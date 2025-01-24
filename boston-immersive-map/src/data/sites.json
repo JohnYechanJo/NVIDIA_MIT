@@ -1,0 +1,15 @@
+[
+    {
+      "id": "boston-tea-party",
+      "name": "Boston Tea Party Site",
+      "coordinates": [42.3554, -71.0490],
+      "description": "Site of the famous 1773 protest."
+    },
+    {
+      "id": "faneuil-hall",
+      "name": "Faneuil Hall",
+      "coordinates": [42.3600, -71.0568],
+      "description": "Historic marketplace and meeting hall."
+    }
+  ]
+  
