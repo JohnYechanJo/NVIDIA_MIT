@@ -12,7 +12,6 @@
     "react-scripts": "5.0.1",
     "three": "^0.172.0",
     "three-stdlib": "^2.35.12",
-
     "web-vitals": "^4.2.4"
   },
   "scripts": {
