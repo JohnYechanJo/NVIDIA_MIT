@@ -25,7 +25,7 @@ function App() {
 
         {/* Immersive 3D Page (NeRF Viewer) */}
         {/* :siteId is a URL parameter for loading specific site data */}
-        <Route path="/immersive/:siteId" element={<ImmersiveView />} />
+        <Route path="/immersive/:siteId/:itemId" element={<ImmersiveView />} />
       </Routes>
     </Router>
     </div>

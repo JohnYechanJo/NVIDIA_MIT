@@ -40,10 +40,11 @@ function MapView() {
           <Popup>
             <h3>{site.name}</h3>
             <p>{site.description}</p>
-            {/* On click, navigate to the immersive route */}
-            <button onClick={() => navigate(`/immersive/${site.id}`)}>
-              View Immersive
-            </button>
+            {site.items.map(item => (
+              <button key={item.id} onClick={() => navigate(`/immersive/${site.id}/${item.id}`)}>
+                View Immersive: {item.name}
+              </button>
+            ))}
           </Popup>
         </Marker>
       ))}
