@@ -1,15 +1,16 @@
 [
     {
-      "id": "boston-tea-party",
-      "name": "Boston Tea Party Site",
-      "coordinates": [42.3554, -71.0490],
-      "description": "Site of the famous 1773 protest."
-    },
-    {
-      "id": "faneuil-hall",
-      "name": "Faneuil Hall",
-      "coordinates": [42.3600, -71.0568],
-      "description": "Historic marketplace and meeting hall."
+      "id": "boston-museum-of-fine-arts",
+      "name": "Museum of Fine Arts",
+      "coordinates": [42.3396, -71.0942],
+      "description": "One of the most comprehensive art museums in the world.",
+      "items": [
+        {
+          "id": "lincoln-statue",
+          "name": "Lincoln's Statue",
+          "description": "A statue of Abraham Lincoln."
+        }
+      ]
     }
   ]
   
