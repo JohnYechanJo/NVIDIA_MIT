@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OBJLoader } from 'three-stdlib';
 import { MTLLoader } from 'three-stdlib';
-import { PLYLoader } from 'three-stdlib';
+import { FlyControls } from 'three-stdlib';
 import { OrbitControls } from 'three-stdlib';  // For basic mouse controls
 import "./index.css"; // Import CSS for this component
 import { useParams } from 'react-router-dom'; // useParams를 가져옴
@@ -38,7 +38,14 @@ function ImmersiveView() {
     scene.add(directionalLight);
 
     // 3. Orbit Controls (for drag/zoom)
-    const controls = new OrbitControls(camera, renderer.domElement);
+    // const controls = new OrbitControls(camera, renderer.domElement);
+
+    // FlyControls
+    const controls = new FlyControls(camera, renderer.domElement);
+    controls.movementSpeed = 2; // how fast to move around
+    controls.rollSpeed = Math.PI / 3; // how fast to roll
+    controls.dragToLook = true; // if true, you must click-drag to rotate
+    controls.autoForward = false; // if true, you always move forward
 
     // 4. Create a loading manager (optional)
     const loadingManager = new THREE.LoadingManager();
@@ -70,9 +77,11 @@ function ImmersiveView() {
     });
 
     // 9. Animation Loop
+    const clock = new THREE.Clock();
     const animate = () => {
       requestAnimationFrame(animate);
-      controls.update();  // OrbitControls
+      const delta = clock.getDelta();
+      controls.update(delta);
       renderer.render(scene, camera);
     };
     animate();
