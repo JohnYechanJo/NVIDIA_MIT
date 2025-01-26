@@ -1,14 +1,17 @@
 // src/components/ImmersiveView.js
-
+/* eslint-disable */
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OBJLoader } from 'three-stdlib';
 import { MTLLoader } from 'three-stdlib';
 import { PLYLoader } from 'three-stdlib'; 
 import { OrbitControls } from 'three-stdlib';  // For basic mouse controls
+import "./index.css"; // Import CSS for this component
+import { useParams } from 'react-router-dom'; // useParams를 가져옴
 
 function ImmersiveView() {
   const mountRef = useRef(null);
+  const { siteId } = useParams(); // URL parameter
 
   useEffect(() => {
     // 1. Set up Scene, Camera, Renderer
@@ -95,7 +98,26 @@ function ImmersiveView() {
     };
   }, []);
 
-  return <div style={{ width: '100%', height: '100vh' }} ref={mountRef} />;
+  // return <div style={{ width: '100%', height: '100vh' }} ref={mountRef} />
+
+  return (
+    <div className="app-container">
+      {/* 상단 프로젝트 정보 박스 */}
+      <div className="project-info-box">
+        <h1 className="project-title">{siteId}</h1>
+        <p className="project-subtitle">
+          Reconstructing Historic Objects with Nerfstudio
+        </p>
+      </div>
+
+      {/* Three.js 렌더링 영역 */}
+      <div
+        className="immersive-view-renderer"
+        style={{ width: '100%', height: '100%' }}
+        ref={mountRef}
+      />
+    </div>
+  );
 }
 
 export default ImmersiveView;
