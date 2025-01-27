@@ -95,8 +95,8 @@ npm start
 <table>
   <tr>
     <td align="center"><a href="https://github.com/Charley-xiao"><img src="https://avatars.githubusercontent.com/u/59205189?v=4" width="100px;" alt=""/><br /><sub><b>Qiwen Xiao</b></sub></a><br /></td>
-    <td align="center"><a href="https://avatars.githubusercontent.com/u/131790222?v=4"><img src="https://avatars.githubusercontent.com/u/131790222?v=4" width="100px;" alt=""/><br /><sub><b>John Yechan Jo</b></sub></a><br /></td>
-    <td align="center"><a href="https://avatars.githubusercontent.com/u/136285291?v=4"><img src="https://avatars.githubusercontent.com/u/136285291?v=4" width="100px;" alt=""/><br /><sub><b>Wenbo An</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/JohnYechanJo"><img src="https://avatars.githubusercontent.com/u/131790222?v=4" width="100px;" alt=""/><br /><sub><b>John Yechan Jo</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/Athjon"><img src="https://avatars.githubusercontent.com/u/136285291?v=4" width="100px;" alt=""/><br /><sub><b>Wenbo An</b></sub></a><br /></td>
     </tr>
 </table>
 
