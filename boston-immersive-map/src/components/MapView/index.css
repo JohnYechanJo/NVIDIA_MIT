@@ -95,4 +95,22 @@
   .leaflet-control-attribution a:hover {
     color: #2563eb;
   }
-  
+
+  .show-route-button {
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+    background: #3bf6ae;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+  }
+
+  .show-route-button:hover {
+    background: #38e9a5;
+  }

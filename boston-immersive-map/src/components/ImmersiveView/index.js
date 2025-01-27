@@ -145,7 +145,7 @@ function ImmersiveView() {
         
         <br />
         <button className="explore-button" onClick={() => window.history.back()}>
-          Explore Others
+          Back to Map
         </button>
       </div>
 
