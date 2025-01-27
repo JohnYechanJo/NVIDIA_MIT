@@ -29,7 +29,7 @@ jobs:
       - name: Extract models.tar.gz
         run: |
           mkdir -p extracted
-          tar -xzf public/models.tar.gz -C extracted
+          tar -xvf public/models.tar.gz -C extracted
           ls -lR extracted
 
       - name: Validate extracted directory structure
