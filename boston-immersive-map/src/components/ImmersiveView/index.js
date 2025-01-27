@@ -6,6 +6,9 @@ import { OBJLoader } from 'three-stdlib';
 import { MTLLoader } from 'three-stdlib';
 import { FlyControls } from 'three-stdlib';
 import { OrbitControls } from 'three-stdlib';  // For basic mouse controls
+import { EXRLoader } from 'three-stdlib';
+// PMREMGenerator 用于将 equirectangular 贴图转成 WebGL 适用的 Environment Map
+import { PMREMGenerator } from 'three';
 import "./index.css"; // Import CSS for this component
 import { useParams } from 'react-router-dom'; // useParams를 가져옴
 
@@ -76,6 +79,22 @@ function ImmersiveView() {
       });
     });
 
+    // 4. 使用 EXRLoader 加载 museum.exr
+    const exrLoader = new EXRLoader();
+    const pmremGenerator = new PMREMGenerator(renderer);
+    pmremGenerator.compileEquirectangularShader();
+
+    exrLoader.load(`/textures/${itemId}.exr`, (texture) => {
+      // 将 equirectangular EXR 转换成 PMREM 的贴图
+      const envMap = pmremGenerator.fromEquirectangular(texture).texture;
+      // 设置场景的背景和环境
+      scene.background = envMap;
+      scene.environment = envMap;
+
+      // 注意：转成 PMREM 后原始贴图可以释放
+      texture.dispose();
+    });
+
     // 9. Animation Loop
     const clock = new THREE.Clock();
     const animate = () => {
@@ -99,10 +118,17 @@ function ImmersiveView() {
     <div className="app-container">
       {/* 상단 프로젝트 정보 박스 */}
       <div className="project-info-box">
-        <h1 className="project-title">{siteId}</h1>
+        <h1 className="project-title">{siteId.split('-').join(' ').toUpperCase()}</h1>
         <p className="project-subtitle">
-          Reconstructing Historic Objects with Nerfstudio
+          Reconstructed {itemId.split('-').join(' ').toUpperCase()} in 3D.
         </p>
+        <p>
+          A: Left; D: Right; W: Forward; S: Backward; R: Up; F: Down; Q: Roll Left; E: Roll Right; Click-drag: Look Around
+        </p>
+        <br />
+        <button className="explore-button" onClick={() => window.history.back()}>
+          Explore More
+        </button>
       </div>
 
       {/* Three.js 렌더링 영역 */}

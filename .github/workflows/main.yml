@@ -1,0 +1,55 @@
+name: Validate models.tar.gz extraction
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  check-models:
+    runs-on: ubuntu-latest
+    
+    # Set the default working directory for all 'run' steps in this job.
+    defaults:
+      run:
+        working-directory: boston-immersive-map
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Ensure models.tar.gz exists
+        run: |
+          if [ ! -f "public/models.tar.gz" ]; then
+            echo "ERROR: models.tar.gz not found in boston-immersive-map/public."
+            exit 1
+          fi
+
+      - name: Extract models.tar.gz
+        run: |
+          mkdir -p extracted
+          tar -xzvf public/models.tar.gz -C extracted
+          ls -lR extracted
+
+      - name: Validate extracted directory structure
+        run: |
+          # 1) Confirm there is an extracted/models directory
+          if [ ! -d "extracted/models" ]; then
+            echo "ERROR: No 'models' directory found after extraction."
+            exit 1
+          fi
+          
+          # 2) For each subdirectory in extracted/models, check .obj and .mtl files
+          for dir in extracted/models/*; do
+            if [ -d "$dir" ]; then
+              obj_count=$(find "$dir" -maxdepth 1 -type f -name "*.obj" | wc -l)
+              mtl_count=$(find "$dir" -maxdepth 1 -type f -name "*.mtl" | wc -l)
+              if [ "$obj_count" -ne 1 ] || [ "$mtl_count" -ne 1 ]; then
+                echo "ERROR: Directory '$dir' must contain exactly 1 .obj and 1 .mtl file."
+                exit 1
+              fi
+            fi
+          done
+
+          echo "SUCCESS: Each subdirectory in 'models' contains exactly one .obj and one .mtl file."

@@ -10,9 +10,9 @@ function App() {
     <div className="app-container">
         {/* Project Info Box */}
         <div className="project-info-box">
-        <h1 className="project-title">Boston TimeCapsule</h1>
+        <h1 className="project-title">Immersive Boston</h1>
         <p className="project-subtitle">
-          Reconstructing Historic Objects with Nerfstudio
+          Explore Boston in 3D.
         </p>
       </div>
 
