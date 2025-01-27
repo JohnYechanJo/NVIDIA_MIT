@@ -9,6 +9,11 @@
           "id": "lincoln-statue",
           "name": "Lincoln's Statue",
           "description": "A statue of Abraham Lincoln."
+        },
+        {
+          "id": "different-chairs",
+          "name": "Different Chairs",
+          "description": "A collection of different styles of chairs."
         }
       ]
     }

@@ -99,10 +99,17 @@ function ImmersiveView() {
     <div className="app-container">
       {/* 상단 프로젝트 정보 박스 */}
       <div className="project-info-box">
-        <h1 className="project-title">{siteId}</h1>
+        <h1 className="project-title">{siteId.split('-').join(' ').toUpperCase()}</h1>
         <p className="project-subtitle">
-          Reconstructing Historic Objects with Nerfstudio
+          Reconstructed {itemId.split('-').join(' ').toUpperCase()} in 3D.
         </p>
+        <p>
+          A: Left; D: Right; W: Forward; S: Backward; R: Up; F: Down; Q: Roll Left; E: Roll Right; Click-drag: Look Around
+        </p>
+        <br />
+        <button className="explore-button" onClick={() => window.history.back()}>
+          Explore More
+        </button>
       </div>
 
       {/* Three.js 렌더링 영역 */}

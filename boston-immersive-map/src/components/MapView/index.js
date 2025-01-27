@@ -4,7 +4,8 @@ import L from 'leaflet';
 import { useNavigate } from 'react-router-dom';
 
 import 'leaflet/dist/leaflet.css';
-import sitesData from '../../data/sites.json'; // If using a local JSON
+import './index.css'; // Import your custom CSS
+import sitesData from '../../data/sites.json'; // Local JSON (adjust path as needed)
 
 function MapView() {
   const [sites, setSites] = useState([]);
@@ -12,12 +13,11 @@ function MapView() {
 
   // Load site data on mount
   useEffect(() => {
-    // If you have an API, fetch it here.
-    // For a local JSON file, just set the imported data:
+    // If you have an API, replace this with a fetch call
     setSites(sitesData);
   }, []);
 
-  // Ensure the default icon is properly set up (Leaflet quirk in React)
+  // Fix Leaflet icon paths (Leaflet quirk in React)
   delete L.Icon.Default.prototype._getIconUrl;
   L.Icon.Default.mergeOptions({
     iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
@@ -29,21 +29,31 @@ function MapView() {
   const bostonCoordinates = [42.3601, -71.0589];
 
   return (
-    <MapContainer center={bostonCoordinates} zoom={13} style={{ height: '100vh' }}>
+    <MapContainer
+      center={bostonCoordinates}
+      zoom={13}
+      className="map-container"
+    >
       <TileLayer
         attribution="&copy; OpenStreetMap contributors"
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      
-      {sites.map(site => (
+
+      {sites.map((site) => (
         <Marker key={site.id} position={site.coordinates}>
           <Popup>
             <h3>{site.name}</h3>
             <p>{site.description}</p>
-            {site.items.map(item => (
-              <button key={item.id} onClick={() => navigate(`/immersive/${site.id}/${item.id}`)}>
-                View Immersive: {item.name}
-              </button>
+
+            {site.items.map((item) => (
+              <div className="item" key={item.id}>
+                <button
+                  onClick={() => navigate(`/immersive/${site.id}/${item.id}`)}
+                >
+                  {item.name}
+                </button>
+                <p>{item.description}</p>
+              </div>
             ))}
           </Popup>
         </Marker>
