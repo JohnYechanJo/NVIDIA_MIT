@@ -4,11 +4,11 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'public/models.tar.gz'       # Only run if models.tar.gz changes
+      - 'boston-immersive-map/public/models.tar.gz'       # Only run if models.tar.gz changes
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'public/models.tar.gz'       # Only run if models.tar.gz changes
+      - 'boston-immersive-map/public/models.tar.gz'       # Only run if models.tar.gz changes
 
 jobs:
   check-models:
