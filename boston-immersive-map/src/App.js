@@ -14,6 +14,9 @@ function App() {
         <p className="project-subtitle">
           Explore Boston in 3D.
         </p>
+        <a href="https://github.com/Charley-xiao/NVIDIA_MIT" className="project-link">
+          View on GitHub
+        </a>
       </div>
 
 
