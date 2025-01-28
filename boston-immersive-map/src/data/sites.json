@@ -21,6 +21,19 @@
           "description": "Two statues."
         }
       ]
+    },
+    {
+      "id": "massechusetts-general-hospital",
+      "name": "Massachusetts General Hospital",
+      "coordinates": [42.3626, -71.0695],
+      "description": "The original and largest teaching hospital of Harvard Medical School.",
+      "items": [
+        {
+          "id": "emerson-respirator",
+          "name": "Emerson Respirator",
+          "description": "When \"Iron Lungs\" were developed in Boston in 1928, they were the only effective ventilator technology, and they saved the lives of many polio patients.\nUnlike today's positive pressure ventilators, which force air into the airway, iron lungs worked by negative pressure, changing the pressure around the patient's body to force the lungs to expand and contract."
+        }
+      ]
     }
   ]
   

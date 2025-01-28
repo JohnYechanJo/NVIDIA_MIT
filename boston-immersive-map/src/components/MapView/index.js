@@ -63,12 +63,13 @@ function MapView() {
 
             {site.items.map((item) => (
               <div className="item" key={item.id}>
+              <h3>{item.name}</h3>
+                <p>{item.description}</p>
                 <button
                   onClick={() => navigate(`/immersive/${site.id}/${item.id}`)}
                 >
-                  {item.name}
+                  View Immersive
                 </button>
-                <p>{item.description}</p>
               </div>
             ))}
 

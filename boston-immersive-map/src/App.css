@@ -76,3 +76,14 @@
   color: #666; /* 회색 */
   margin: 8px 0 0;
 }
+
+.project-link {
+  display: block;
+  margin-top: 16px;
+  color: #007bff; /* 파란색 */
+  text-decoration: none;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
