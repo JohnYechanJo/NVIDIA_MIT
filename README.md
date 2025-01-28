@@ -73,6 +73,40 @@ The user interface is built using React.js.
 
 The project is deployed on Vercel and can be accessed [here](https://nvidia-mit.vercel.app/).
 
+## Quality Assurance
+
+While we have made every effort to ensure the accuracy of the models, there may be some discrepancies due to the limitations of the scanning and training process. In our workflow, we have included a step for automatic quality assessment of the models. We report the following metrics for each model:
+
+- **Polygon Composition** describes the number of triangles, quads, and ngons in the model.
+- **Vertex Count** is the number of vertices in the model.
+- **Face Count** is the number of faces in the model.
+- **Edge Count** is the number of edges in the model.
+- **Is Watertight** indicates whether the model is watertight, i.e., there are no holes in the mesh.
+- **Bounding Box Size** gives the size of the bounding box of the model.
+- **UV Coverage** is the percentage of the UV space covered by the model, recommended to be close to 1.
+- **UV Overlap Count** is the number of overlapping UVs in the model, which should be minimized.
+- **Aspect Ratio** describes the aspect ratio of the faces in the model, with the average, minimum, and maximum values reported. A high aspect ratio indicates stretched faces.
+- **Normal Consistency Score** is the percentage of faces in the model that have consistent normals, recommended to be close to 100.
+
+Example (`different-chairs`):
+
+| Metric                   | Value      | Ideal |
+|:--------------------------:|:------------:|:-----------:|
+| Polygon Composition       | Triangles: 54156, Quads: 0, Ngons: 0 | -          |
+| Vertex Count              | 35330      | -          |
+| Face Count                | 54156      | -          |
+| Edge Count                | 89099      | -          |
+| Is Watertight             | False      | True       |
+| Bounding Box Size         | [1.049674, 2.28574, 7.15594] | -          |
+| UV Coverage               | 0.996948139885 | 1          |
+| UV Overlap Count          | 307348     | 0          |
+| Aspect Ratio (Avg)        | 1.7119014983714047 | -          |
+| Aspect Ratio (Min)        | 1.001092911616002 | -          |
+| Aspect Ratio (Max)        | 567.1252187939361 | -          |
+| Normal Consistency Score  | 99.88551591698057 | 100        |
+
+See [workflows](https://github.com/Charley-xiao/NVIDIA_MIT/actions) for more details.
+
 ## Installation
 
 1. Clone the repository:

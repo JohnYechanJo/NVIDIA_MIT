@@ -1,10 +1,14 @@
-name: Validate models.tar.gz extraction
+name: Check Models (this may take ~10 minutes for each model)
 
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'public/models.tar.gz'       # Only run if models.tar.gz changes
   pull_request:
     branches: [ "main" ]
+    paths:
+      - 'public/models.tar.gz'       # Only run if models.tar.gz changes
 
 jobs:
   check-models:
@@ -53,3 +57,18 @@ jobs:
           done
 
           echo "SUCCESS: Each subdirectory in 'models' contains exactly one .obj and one .mtl file."
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install Python dependencies
+        run: |
+          pip install trimesh
+
+      - name: Run metrics report
+        run: |
+          echo "Running report_metrics.py on extracted/models..."
+          python ../report_metrics.py extracted/models
+          echo "Finished metrics report."
