@@ -16,9 +16,9 @@
           "description": "A collection of different styles of chairs."
         },
         {
-          "id": "egypt",
-          "name": "Egyptian Statues",
-          "description": "Two Egyptian statues."
+          "id": "two-statues",
+          "name": "Two Statues",
+          "description": "Two statues."
         }
       ]
     }
