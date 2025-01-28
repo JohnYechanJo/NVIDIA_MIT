@@ -66,6 +66,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           pip install trimesh
+          pip install tqdm
 
       - name: Run metrics report
         run: |
