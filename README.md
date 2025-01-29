@@ -143,7 +143,7 @@ npm start
 
 ## Acknowledgements
 
-This project was part of MIT xPro 2025 AI+X Bootcamp, January to February, 2025, under the guidance of [Yifei Li](https://people.csail.mit.edu/liyifei/).
+This project was part of Winter 2025 MIT AI+X On-Campus Experience, January to February, 2025, under the guidance of [Yifei Li](https://people.csail.mit.edu/liyifei/).
 
 ## License
 
