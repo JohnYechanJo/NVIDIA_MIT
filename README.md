@@ -8,12 +8,12 @@
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![GitHub last commit](https://img.shields.io/github/last-commit/Charley-xiao/NVIDIA_MIT)](https://github.com/Charley-xiao/NVIDIA_MIT/commits/main)
-[![GitHub issues](https://img.shields.io/github/issues/Charley-xiao/NVIDIA_MIT)](https://github.com/Charley-xiao/NVIDIA_MIT/issues)
+[![GitHub issues](https://img.shields.io/github/issues/JohnYechanJo/NVIDIA_MIT)](https://github.com/JohnYechanJo/NVIDIA_MIT/issues)
 
 
 ## Contributors
 
-[![GitHub contributors](https://img.shields.io/github/contributors/Charley-xiao/NVIDIA_MIT)](https://github.com/Charley-xiao/NVIDIA_MIT/graphs/contributors)
+[![GitHub contributors](https://img.shields.io/github/contributors/JohnYechanJo/NVIDIA_MIT)](https://github.com/JohnYechanJo/NVIDIA_MIT/graphs/contributors)
 
 <table>
   <tr>
