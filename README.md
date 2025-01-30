@@ -1,5 +1,4 @@
 <div align="center">
-<img src="./assets/Boston_in_3D.png">
 <br>
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=4&height=250&text=Boston%20in%203D&fontColor=FFFFFF&fontSize=80">
   <h3>A Citywide Object Archive Using Nerfstudio</h3>
@@ -23,6 +22,7 @@
     <td align="center"><a href="https://github.com/Athjon"><img src="https://avatars.githubusercontent.com/u/136285291?v=4" width="100px;" alt=""/><br /><sub><b>Wenbo An</b></sub></a><br /></td>
     </tr>
 </table>
+<img src="./assets/Boston_in_3D.png">
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=4&height=80&section=footer&fontSize=80)
 
