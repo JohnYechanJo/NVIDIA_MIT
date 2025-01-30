@@ -1,6 +1,6 @@
 <div align="center">
 <img src="./assets/Boston_in_3D.png">
-</br>
+<br>
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=4&height=250&text=Boston%20in%203D&fontColor=FFFFFF&fontSize=80">
   <h3>A Citywide Object Archive Using Nerfstudio</h3>
   <p>Reconstructing objects across the city of Boston using Nerfstudio.</p>
