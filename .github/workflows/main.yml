@@ -3,12 +3,12 @@ name: Check Models (this may take ~10 minutes for each model)
 on:
   push:
     branches: [ "main" ]
-    # paths:
-      # - 'boston-immersive-map/public/models.tar.gz'       # Only run if models.tar.gz changes
+    paths:
+      - 'boston-immersive-map/public/models.tar.gz'       # Only run if models.tar.gz changes
   pull_request:
     branches: [ "main" ]
-    # paths:
-      # - 'boston-immersive-map/public/models.tar.gz'       # Only run if models.tar.gz changes
+    paths:
+      - 'boston-immersive-map/public/models.tar.gz'       # Only run if models.tar.gz changes
 
 jobs:
   check-models:
