@@ -1,5 +1,5 @@
 <div align="center">
-<img src="./assets/Boston_in_3D.png">
+<img src="./assets/Boston in 3D.png">
 
 <br>
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=4&height=250&text=Boston%20in%203D&fontColor=FFFFFF&fontSize=80">
